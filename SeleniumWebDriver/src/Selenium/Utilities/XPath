@@ -1,0 +1,50 @@
+Absolute XPath, Relative XPath
+
+web elementlerin'de testte kullanmak için attribute'lar;
+
+-id,class,type,text
+-css selector
+-xpath
+
+bu hiyerarşi'de kullanılır, xpath 2 ms sonra çalışır çünkü!
+
+Absolute XPath:
+/html/body/div[2]/div/section/figure/figcaption/div[2]
+
+Relative XPath:
+//*[@id='contact_form']
+//div[text()='Sipariş']
+
+Basic format for relative xpath:
+//tagname[@attribute='value']
+
+Contains():
+XPath=//*[contains(@id,'nav')] --> id'lerin içerisinde nav geçen web elementleri arayıp bulmamı sağlar!
+XPath=//*[contains(@type,'sub')] --> Every tags which contains 'sub' in type
+XPath=//*[contains(@name,'btn')] --> Every tags which contains 'btn' in name
+XPath=//*[contains(@id,'message')] --> Every tags which contains 'message' in id
+XPath=//*[contains(@href,'guru99.com')] --> Every tags which contains 'guru99.com' in href
+XPath=//h2[contains(@text(),'Popular right now')] --> Every h2 tags which contains 'Popular right now' in visible text
+
+starts-with
+XPath=//*[starts-with(@id,'message')] --> id'si message ile başlayanları verir!
+
+Ends-with
+XPath=//*[ends-with(@id,'message')] --> id'si message ile bitenleri verir!
+
+using Or & And
+
+XPath=//*[@type='submit' and @name='button'] --> tüm tagler içerisinde type'ı submit, name'i button olan web elementini bulur!
+XPath=//button[@type'submit' or @name='button'] --> button tagleri içerisinde type'ı submit ya da name'i button olan web elementini bulur!
+
+Text():
+XPath=//*[text()='Watch the Videos']
+XPath=//*[contains(text()),'Watch')]
+
+Child:
+XPath=//div[@id='main-navbar']//child::li
+
+Siblings:
+XPath=//*[@id='navBarDropdown']//following-sibling::div
+
+
